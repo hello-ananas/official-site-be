@@ -9,10 +9,10 @@ import java.io.IOException;
 
 public class MoneySerialize extends JsonSerializer<Float> {
 
-    public static final String _$ = "$";
+  public static final String _$ = "$";
 
-    @Override
-    public void serialize(Float value, JsonGenerator gen, SerializerProvider serializers) throws IOException, JsonProcessingException {
-        gen.writeString(new StringBuilder().append(_$).append(String.valueOf(value)).toString());
-    }
+  @Override
+  public void serialize(Float value, JsonGenerator gen, SerializerProvider serializers) throws IOException, JsonProcessingException {
+    gen.writeString(new StringBuilder().append(_$).append(String.valueOf(value)).toString());
+  }
 }

@@ -1,7 +1,11 @@
 package jp.co.ananasgroup.controller;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+
 /**
  * Created by shmily on 2016/8/30.
  */
-public class AbstractAPIController {
+@RequestMapping("/api")
+public abstract class AbstractAPIController {
+
 }
