@@ -16,23 +16,8 @@ public class ProductController extends AbstractAPIController {
   @Autowired
   private ProductRepository productRepository;
 
-  @RequestMapping(path = "/products", method = RequestMethod.GET)
-  public List<Product> getAll() {
-    try {
-      TimeUnit.SECONDS.sleep(1); // for loading...
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    return productRepository.findAll();
-  }
-
   @RequestMapping(path = "/products", method = RequestMethod.POST)
   public List<Product> filter(@RequestBody ProductFilter filter) {
-    try {
-      TimeUnit.SECONDS.sleep(1); // for loading...
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
     if (!Strings.isNullOrEmpty(filter.getFilterText())) {
       if (filter.isInStockOnly()) {
         return productRepository.filter(filter.getFilterText());
