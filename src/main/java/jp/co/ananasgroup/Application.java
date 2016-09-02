@@ -3,6 +3,7 @@ package jp.co.ananasgroup;
 import jp.co.ananasgroup.entity.Product;
 import jp.co.ananasgroup.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +27,7 @@ public class Application implements CommandLineRunner {
     return new WebMvcConfigurerAdapter() {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**").allowedOrigins("http://localhost:3001");
+        registry.addMapping("/api/**").allowedOrigins("http://192.168.3.3:3001");
       }
     };
   }
