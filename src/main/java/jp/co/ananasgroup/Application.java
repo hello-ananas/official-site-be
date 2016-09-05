@@ -41,8 +41,8 @@ public class Application implements CommandLineRunner {
     this.repoProduct.deleteAll();
 
     this.repoProduct.save(new Product("1", "Sporting Goods", 49.99F, true, "Football"));
-    this.repoProduct.save(new Product("2", "Sporting Goods", 9.99F, true, "Baseball"));
     this.repoProduct.save(new Product("3", "Sporting Goods", 29.99F, false, "Basketball"));
+    this.repoProduct.save(new Product("2", "Sporting Goods", 9.99F, true, "Baseball"));
     this.repoProduct.save(new Product("4", "Electronics", 99.99F, true, "iPod Touch"));
     this.repoProduct.save(new Product("5", "Electronics", 399.99F, false, "iPhone 5"));
     this.repoProduct.save(new Product("6", "Electronics", 199.99F, true, "Nexus 7"));

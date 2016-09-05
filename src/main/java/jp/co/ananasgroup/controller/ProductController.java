@@ -18,6 +18,8 @@ public class ProductController extends AbstractAPIController {
   @RequestMapping(path = "/products", method = RequestMethod.POST)
   public List<Product> filter(@RequestBody ProductFilter filter) {
     if (!Strings.isNullOrEmpty(filter.getFilterText())) {
+      return productRepository.findByNameContainingIgnoreCase(filter.getFilterText());
+      /*
       if (filter.isInStockOnly()) {
         return productRepository.filter(filter.getFilterText());
       } else {
@@ -27,6 +29,7 @@ public class ProductController extends AbstractAPIController {
       if (filter.isInStockOnly()) {
         return productRepository.findByStockedIsTrue();
       }
+      */
     }
     return productRepository.findAll();
   }

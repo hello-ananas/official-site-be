@@ -11,9 +11,9 @@ public interface ProductRepository extends MongoRepository<Product, Long> {
 
   List<Product> findByNameContainingIgnoreCase(String filterText);
 
-  List<Product> findByStockedIsTrue();
+//  List<Product> findByStockedIsTrue();
 
-  @Query("{ 'name' : { $regex: '.*?0.*', $options: 'i' }, 'stocked' : true }")
-  List<Product> filter(String filterText);
+//  @Query("{ 'name' : { $regex: '.*?0.*', $options: 'i' }, 'stocked' : true }")
+//  List<Product> filter(String filterText);
 
 }
